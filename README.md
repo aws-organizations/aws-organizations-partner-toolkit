@@ -36,8 +36,14 @@ the following objects in the master billing account, including:
     *   create reseller service control policies (SCPs)
 7. create-all-resources.yaml   This is a cloudformation template which creates all of the IAM groups, roles and admin users described below.   
 
-Setup Instructions
-------------------
+* * * * * * * * * * 
+* * * SETUP * * * *
+* * * * * * * * * *
+
+THERE ARE TWO OPTIONS FOR RESELLERS FOR CONFIGURING A NEW MASTER PAYER ACCOUNT:
+
+Option 1: Manual setup: Instructions
+------------------------------------
 
 To set up your master payer account, do the following:
 
@@ -61,8 +67,15 @@ An additional measure to protect SCPs is to deny access to the root OU for any c
 
 
 
-Future Enhancements:
---------------------
-To try the python-based approach:  Run the script below from the command line.
+Option 2: Automated setup: Instructions
+---------------------------------------
+
+1. Create a master payer account.
+
+2. Configure your AWS CLI so that it references your new master payer account (for more information, please see: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+
+2. Run the script below from the command line.   It will perform steps 2-5 of the manual option, as described previously.
 
 python create_org_resources.py --org_admin_password  [ORG ADMIN PASSWORD HERE]  --partner_admin_password   [PARTNER PASSWORD HERE]
+
+3. Invite accounts into the new organization.
